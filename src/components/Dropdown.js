@@ -4,7 +4,18 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
   const [open, setOpen] = useState(false)
   const renderOptions = options.map((option) => {
     if (option.value === selected.value) {
-      return null
+      return (
+        <div
+          style={{ color: 'gray' }}
+          key={option.value}
+          className="item"
+          onClick={() => {
+            onSelectedChange(option)
+          }}
+        >
+          {option.label}
+        </div>
+      )
     }
     return (
       <div
