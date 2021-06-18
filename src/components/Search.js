@@ -3,9 +3,11 @@ import axios from 'axios'
 
 const Search = () => {
   const [term, setTerm] = useState('')
+  const [results, setResult] = useState([])
+  console.log(results)
   useEffect(() => {
-    ;(async () => {
-      await axios.get('https://en.wikipedia.org/w/api.php', {
+    const search = async () => {
+      const { data } = await axios.get('https://en.wikipedia.org/w/api.php', {
         params: {
           action: 'query',
           list: 'search',
@@ -14,7 +16,9 @@ const Search = () => {
           srsearch: term,
         },
       })
-    })()
+      setResult(data.query.search)
+    }
+    term && search()
   }, [term])
   return (
     <div className="ui form container">
