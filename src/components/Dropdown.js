@@ -1,33 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 const Dropdown = ({ options, selected, onSelectedChange }) => {
+  const ref = useRef()
   const [open, setOpen] = useState(false)
   useEffect(() => {
     document.body.addEventListener(
       'click',
-      () => {
+      (e) => {
+        if (ref.current.contains(e.target)) return
         setOpen(false)
       },
       { capture: true }
     )
   }, [])
   const renderOptions = options.map((option) => {
-    if (option.value === selected.value) {
-      return (
-        <div
-          style={{ color: 'gray' }}
-          key={option.value}
-          className="item"
-          onClick={() => {
-            onSelectedChange(option)
-          }}
-        >
-          {option.label}
-        </div>
-      )
-    }
+    const color = option.value === selected.value ? `gray` : ``
     return (
       <div
+        style={{ color: color }}
         key={option.value}
         className="item"
         onClick={() => {
@@ -38,8 +28,10 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
       </div>
     )
   })
+  console.log(ref.current)
+
   return (
-    <div className="ui form container">
+    <div ref={ref} className="ui form container">
       <div className="field">
         <label className="label">Select an item</label>
         <div
