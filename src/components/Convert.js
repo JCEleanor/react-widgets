@@ -5,6 +5,15 @@ const KEY = 'AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM'
 
 const Convert = ({ language, input }) => {
   const [translateResult, setTranslateResult] = useState('')
+  const [deboucedInput, setDebouncedInput] = useState(input)
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setDebouncedInput(input)
+    }, 500)
+    return () => {
+      clearTimeout(timerId)
+    }
+  }, [input])
   useEffect(() => {
     const translateInput = async () => {
       const { data } = await axios.post(
@@ -12,7 +21,7 @@ const Convert = ({ language, input }) => {
         {},
         {
           params: {
-            q: input,
+            q: deboucedInput,
             target: language.value,
             key: KEY,
           },
@@ -21,7 +30,7 @@ const Convert = ({ language, input }) => {
       setTranslateResult(data.data.translations[0].translatedText)
     }
     translateInput()
-  }, [language, input])
+  }, [language, deboucedInput])
   return (
     <div>
       <h1 className="ui header">{translateResult}</h1>
