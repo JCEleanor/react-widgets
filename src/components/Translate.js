@@ -1,10 +1,21 @@
 import React, { useState } from 'react'
 import Convert from './Convert'
 import Dropdown from './Dropdown'
-const KEY = 'AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM'
 
 const Translate = () => {
   const options = [
+    {
+      label: 'Chinese',
+      value: 'zh-TW',
+    },
+    {
+      label: 'Japanese',
+      value: 'ja',
+    },
+    {
+      label: 'Korean',
+      value: 'ko',
+    },
     {
       label: 'Afrikaans',
       value: 'af',
