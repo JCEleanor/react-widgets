@@ -3,16 +3,18 @@ import React, { useState, useEffect, useRef } from 'react'
 const Dropdown = ({ options, selected, onSelectedChange }) => {
   const ref = useRef()
   const [open, setOpen] = useState(false)
+
   useEffect(() => {
-    document.body.addEventListener(
-      'click',
-      (e) => {
-        if (ref.current.contains(e.target)) return
-        setOpen(false)
-      },
-      { capture: true }
-    )
+    const onBodyClick = (event) => {
+      if (ref.current.contains(event.target)) return
+      setOpen(false)
+    }
+    document.body.addEventListener('click', onBodyClick, { capture: true })
+    return () => {
+      document.body.removeEventListener('click', onBodyClick, { capture: true })
+    }
   }, [])
+
   const renderOptions = options.map((option) => {
     const color = option.value === selected.value ? `gray` : ``
     return (
@@ -28,7 +30,6 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
       </div>
     )
   })
-  console.log(ref.current)
 
   return (
     <div ref={ref} className="ui form container">
