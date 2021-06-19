@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import Dropdown from './components/Dropdown'
+import React from 'react'
+import Translate from './components/Translate'
 // import Accordion from './components/Accordion'
 // const dummyData = [
 //   {
@@ -19,30 +19,10 @@ import Dropdown from './components/Dropdown'
 //   },
 // ]
 
-const options = [
-  {
-    label: 'red',
-    value: 'red',
-  },
-  {
-    label: 'green',
-    value: 'green',
-  },
-  {
-    label: 'blue',
-    value: 'blue',
-  },
-]
-
 function App() {
-  const [selected, setSelected] = useState(options[0])
   return (
     <div>
-      <Dropdown
-        selected={selected}
-        onSelectedChange={setSelected}
-        options={options}
-      />
+      <Translate />
     </div>
   )
 }
