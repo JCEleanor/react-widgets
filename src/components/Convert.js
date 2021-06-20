@@ -31,9 +31,12 @@ const Convert = ({ language, input }) => {
     }
     translateInput()
   }, [language, deboucedInput])
+  const result = translateResult || 'Your result will be here...'
   return (
     <div>
-      <h1 className="ui header">{translateResult}</h1>
+      <p className="ui header" style={{ textAlign: 'center' }}>
+        {result}
+      </p>
     </div>
   )
 }
