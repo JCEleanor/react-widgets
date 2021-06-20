@@ -48,7 +48,7 @@ const Search = () => {
     <>
       <div className="ui form container">
         <div className="field">
-          <label>Enter Search Term</label>
+          <label>Search on Wikipedia</label>
           <input
             type="text"
             className="input"
