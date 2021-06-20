@@ -2,6 +2,9 @@ import React from 'react'
 
 const Link = ({ className, href, children }) => {
   const onClick = (event) => {
+    if (event.metaKey || event.ctrKey) {
+      return
+    }
     event.preventDefault()
     window.history.pushState({}, '', href)
     const navEvent = new PopStateEvent('popstate')
