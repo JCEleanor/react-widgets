@@ -8,10 +8,10 @@ const Header = () => {
         Accordion
       </Link>
       <Link href="/list" className="item">
-        Search
+        Wikipedia Search
       </Link>
-      <Link href="/dropdown" className="item">
-        Dropdown
+      <Link href="/cart" className="item">
+        Shopping Cart
       </Link>
       <Link href="/translate" className="item">
         Translate
