@@ -16,18 +16,22 @@ const Convert = ({ language, input }) => {
   }, [input])
   useEffect(() => {
     const translateInput = async () => {
-      const { data } = await axios.post(
-        'https://translation.googleapis.com/language/translate/v2',
-        {},
-        {
-          params: {
-            q: deboucedInput,
-            target: language.value,
-            key: KEY,
-          },
-        }
-      )
-      setTranslateResult(data.data.translations[0].translatedText)
+      try {
+        const { data } = await axios.post(
+          'https://translation.googleapis.com/language/translate/v2',
+          {},
+          {
+            params: {
+              q: deboucedInput,
+              target: language.value,
+              key: KEY,
+            },
+          }
+        )
+        setTranslateResult(data.data.translations[0].translatedText)
+      } catch (e) {
+        setTranslateResult(e.message)
+      }
     }
     translateInput()
   }, [language, deboucedInput])
