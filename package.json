@@ -1,5 +1,5 @@
 {
-  "name": "widgets",
+  "name": "react-widgets",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +13,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "gh-pages": "^3.2.2",
     "prettier": "^2.3.1",
     "react": "^17.0.2",
     "react-custom-checkbox": "^2.0.0",
@@ -21,11 +22,13 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
+  "homepage": "https://jceleanor.github.io/react-widgets",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
