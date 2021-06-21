@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import Checkbox from 'react-custom-checkbox'
+
 import { RiCloseCircleLine } from 'react-icons/ri'
 import { TiEdit } from 'react-icons/ti'
+import * as Icon from 'react-icons/fi'
 import Todoform from './Todoform'
 
 const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
@@ -24,10 +27,17 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
       className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
       key={index}
     >
-      <div key={todo.id} onClick={() => completeTodo(todo.id)}>
-        {todo.text}
-      </div>
-      <div className="icon">
+      <Checkbox
+        icon={<Icon.FiCheck color="#fff" size={14} />}
+        name="my-input"
+        checked={todo.isComplete}
+        borderColor="#fff"
+        style={{ cursor: 'pointer', marginRight: '15px' }}
+        onChange={() => completeTodo(todo.id)}
+        label={todo.text}
+      />
+
+      <div className="icons">
         <RiCloseCircleLine
           onClick={() => removeTodo(todo.id)}
           className="delete-icon"

@@ -9041,6 +9041,11 @@ react-app-polyfill@^2.0.0:
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
 
+react-custom-checkbox@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-custom-checkbox/-/react-custom-checkbox-2.0.0.tgz#2c5a027832320723b46b0a4444be3744e518ddd9"
+  integrity sha512-YWwYEfQOMGmWUTHqLE9NHKxToGhxEN/DnYUqNuuFDDhxKqlrx5hyuePwLKn2pzFLmWTOkVNeeTD/L2SW1vaggQ==
+
 react-dev-utils@^11.0.3:
   version "11.0.4"
   resolved "https://registry.npmjs.org/react-dev-utils/-/react-dev-utils-11.0.4.tgz"
