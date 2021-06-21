@@ -5,6 +5,7 @@ import Accordion from './components/Accordion'
 import Search from './components/Search'
 import Cart from './components/shoppingCart/Cart'
 import Translate from './components/Translate'
+import TodoList from './components/todo/TodoList'
 const dummyData = [
   {
     title: 'Declarative',
@@ -38,6 +39,9 @@ function App() {
       </Route>
       <Route path="/translate">
         <Translate />
+      </Route>
+      <Route path="/todo">
+        <TodoList />
       </Route>
     </div>
   )
