@@ -8,7 +8,6 @@ import TodoList from './components/todo/TodoList'
 import Youtube from './components/youtube/Youtube'
 
 function App() {
-  console.log('process.env.PUBLIC_URL: ', process.env.PUBLIC_URL)
   return (
     <div>
       <Header />
