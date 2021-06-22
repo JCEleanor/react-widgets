@@ -50,12 +50,7 @@ const TodoApp = () => {
 
   const todoList = todos.map((todo) => {
     return (
-      <li
-        key={todo.id}
-        onDoubleClick={() => {
-          console.log('double click')
-        }}
-      >
+      <li key={todo.id}>
         <input
           type="checkbox"
           checked={todo.completed}

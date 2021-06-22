@@ -57,7 +57,7 @@ const TodoList = () => {
     setTodos(updatedTodo)
   }
   return (
-    <div>
+    <div className="todo-wrapper">
       <h1>What's the plan...</h1>
       <Todoform onSubmit={addTodo} />
       <Todo
