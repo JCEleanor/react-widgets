@@ -8,22 +8,23 @@ import TodoList from './components/todo/TodoList'
 import Youtube from './components/youtube/Youtube'
 
 function App() {
+  console.log('process.env.PUBLIC_URL: ', process.env.PUBLIC_URL)
   return (
     <div>
       <Header />
-      <Route path="/youtube-search">
+      <Route path="/react-widgets/youtube-search">
         <Youtube />
       </Route>
-      <Route path="/wiki-search">
+      <Route path="/react-widgets/wiki-search">
         <Search />
       </Route>
-      <Route path="/cart">
+      <Route path="/react-widgets/cart">
         <Cart />
       </Route>
-      <Route path="/translate">
+      <Route path="/react-widgets/translate">
         <Translate />
       </Route>
-      <Route path="/todo">
+      <Route path="/react-widgets/todo">
         <TodoList />
       </Route>
     </div>

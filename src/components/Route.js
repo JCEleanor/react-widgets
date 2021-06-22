@@ -9,14 +9,14 @@ const Route = ({ path, children }) => {
   const [currentPath, setCurrentPath] = useState(pathname)
   useEffect(() => {
     const onLocationChange = () => {
-      setCurrentPath(pathname)
+      setCurrentPath(window.location.pathname)
     }
     window.addEventListener('popstate', onLocationChange)
     return () => {
       window.removeEventListener('popstate', onLocationChange)
     }
   }, [])
-  return pathname === path ? children : null
+  return window.location.pathname === path ? children : null
 }
 
 export default Route
