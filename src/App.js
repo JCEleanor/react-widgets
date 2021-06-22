@@ -1,11 +1,11 @@
 import React from 'react'
 import Header from './components/Header'
 import Route from './components/Route'
-import Accordion from './components/Accordion'
 import Search from './components/Search'
 import Cart from './components/shoppingCart/Cart'
 import Translate from './components/Translate'
 import TodoList from './components/todo/TodoList'
+import Youtube from './components/youtube/Youtube'
 const dummyData = [
   {
     title: 'Declarative',
@@ -28,10 +28,10 @@ function App() {
   return (
     <div>
       <Header />
-      <Route path="/">
-        <Accordion data={dummyData} />
+      <Route path="/youtube-search">
+        <Youtube />
       </Route>
-      <Route path="/list">
+      <Route path="/wiki-search">
         <Search />
       </Route>
       <Route path="/cart">

@@ -4,10 +4,10 @@ import Link from './Link'
 const Header = () => {
   return (
     <div className="ui secondary pointing menu">
-      <Link href="/" className="item">
-        Accordion
+      <Link href="/youtube-search" className="item">
+        Youtube Search
       </Link>
-      <Link href="/list" className="item">
+      <Link href="/wiki-search" className="item">
         Wikipedia Search
       </Link>
       <Link href="/cart" className="item">
