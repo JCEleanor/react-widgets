@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Summary = ({ total }) => {
+const Summary = ({ total, pieces }) => {
   return (
     <div className="col-md-4 summary">
       <div>
@@ -10,7 +10,7 @@ const Summary = ({ total }) => {
       </div>
       <hr />
       <div className="row">
-        <div className="col col-style">共 3 項目</div>
+        <div className="col col-style">共 {pieces} 項目</div>
       </div>
       <div className="row row-style">
         <div className="col">總價</div>

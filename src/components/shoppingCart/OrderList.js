@@ -24,14 +24,15 @@ const itemDetails = [
 const OrderList = (props) => {
   let total = 0
 
-  const getTotal = (id, subtotal) => {
+  const getTotal = (id, subtotal, amount) => {
     itemDetails[id].subtotal = subtotal
+    itemDetails[id].amount = amount
 
     const reducer = (accumulator, currentValue) => accumulator + currentValue
     total = itemDetails.map((i) => i.subtotal).reduce(reducer)
-    props.getTotal(total)
-
-    return total
+    amount = itemDetails.map((i) => i.amount).reduce(reducer)
+    props.getTotal(total) //get price in total
+    props.getAmount(amount) //get pieces in total
   }
 
   return (
@@ -53,7 +54,7 @@ const OrderList = (props) => {
       })}
 
       <div className="back-to-shop">
-        <a href="#/">←</a>
+        <span>←</span>
         <span className="text-muted">回到商品頁</span>
       </div>
     </div>

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const Item = (props) => {
   const [tshirt, setTshirt] = useState(1)
 
-  props.getTotal(props.item.id, props.item.price * tshirt)
+  props.getTotal(props.item.id, props.item.price * tshirt, tshirt)
   return (
     <div className={`row main align-items-center border-bottom`}>
       <div className="col-2">
@@ -14,26 +14,26 @@ const Item = (props) => {
         <div className="row">{props.item.name}</div>
       </div>
       <div className="col">
-        <a
-          href="#/"
+        <button
+          className="btn btn-sm p-0 m-0"
+          style={{ width: '20px' }}
           onClick={() => {
             const newtshirt = tshirt - 1 < 1 ? 1 : tshirt - 1
             setTshirt(newtshirt)
           }}
         >
           -
-        </a>
-        <a href="#/" className="border">
-          {tshirt}
-        </a>
-        <a
-          href="#/"
+        </button>
+        <span className="border p-1 px-2">{tshirt}</span>
+        <button
+          className="btn btn-sm p-0 m-0"
+          style={{ width: '20px' }}
           onClick={() => {
             setTshirt(tshirt + 1)
           }}
         >
           +
-        </a>
+        </button>
       </div>
       <div className="col">
         &euro; {props.item.price}{' '}
