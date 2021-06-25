@@ -9,7 +9,7 @@ import Youtube from './components/youtube/Youtube'
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <nav class="navbar navbar-expand-lg navbar-light mb-5">
         <span class="navbar-brand">REACT-WIDGETS</span>
         <button
