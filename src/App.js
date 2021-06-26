@@ -6,6 +6,7 @@ import Cart from './components/shoppingCart/Cart'
 import Translate from './components/Translate'
 import TodoList from './components/todo/TodoList'
 import Youtube from './components/youtube/Youtube'
+import Infinite from './components/infiniteScroll/Infinite'
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
             <Link class="nav-item nav-link" to="/cart">
               SHOPPING CART
             </Link>
+            <Link class="nav-item nav-link" to="/infinite-scroll">
+              INFINITE SCROLL
+            </Link>
             <Link class="nav-item nav-link" to="/translate">
               TRANSLATE
             </Link>
@@ -47,6 +51,9 @@ function App() {
       <Switch>
         <Route path="/cart">
           <Cart />
+        </Route>
+        <Route path="/infinite-scroll">
+          <Infinite />
         </Route>
         <Route path="/translate">
           <Translate />
