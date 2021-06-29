@@ -26,7 +26,7 @@ const Todoform = (props) => {
         <>
           <input
             type="text"
-            placeholder="Add a todo"
+            placeholder="Update a todo"
             value={input}
             name="text"
             className="todo-input"
